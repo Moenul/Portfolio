@@ -29,6 +29,22 @@ Route::group(['middleware' => 'admin'], function(){
         'index'=>'admin.categories.index',
         'edit'=>'admin.categories.edit'
     ]]);
+    Route::resource('/admin/abouts', 'AdminAboutsController', ['names'=>[
+        'index'=>'admin.abouts.index',
+        'edit'=>'admin.abouts.edit'
+    ]]);
+    Route::resource('/admin/services', 'AdminServicesController', ['names'=>[
+        'index'=>'admin.services.index',
+        'edit'=>'admin.services.edit'
+    ]]);
+    Route::resource('/admin/gallaries', 'AdminGallariesController', ['names'=>[
+        'index'=>'admin.gallaries.index',
+        'edit'=>'admin.gallaries.edit'
+    ]]);
+    Route::resource('/admin/socials', 'AdminSocialsController', ['names'=>[
+        'index'=>'admin.socials.index',
+        'edit'=>'admin.socials.edit'
+    ]]);
 
 });
 

@@ -26,5 +26,24 @@ $(".dropdown_btn").click(function(){
 
 
 
+// Before Upload Preview Image
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('#preview_img').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]); // convert to base64 string
+        $('.action_field').show();
+    }
+}
+
+$("#imgInp").change(function() {
+    readURL(this);
+});
+
+  // --------
+
 
 });

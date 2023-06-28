@@ -45,7 +45,7 @@
 <div class="mainSection">
 	<div class="side_nav">
 		<ul>
-			<a href=""><li><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></li></a>
+			<a href="{{ url('/admin') }}"><li><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></li></a>
 			<li><i class="far fa-clipboard"></i><span>Posts</span>
 				<ul class="side_dropdown">
 					<a href=""><li>View All Post</li></a>
@@ -53,21 +53,12 @@
 				</ul>
 			</li>
 
-            <a href="{{ route('admin.categories.index') }}"><li><i class="far fa-clipboard"></i><span>Category</span></li></a>
-			{{-- <li><i class="far fa-clipboard"></i><span>Category</span>
-				<ul class="side_dropdown">
-					<a href="/PHP_Project/admin_panel/category.html"><li>Category</li></a>
-					<a href="/PHP_Project/admin_panel/sub_category.html"><li>Subcategory</li></a>
-				</ul>
-			</li> --}}
+            <a href="{{ route('admin.categories.index') }}"><li><i class="fas fa-th-large"></i><span>Category</span></li></a>
+            <a href="{{ route('admin.abouts.index') }}"><li><i class="fas fa-address-card"></i><span>About</span></li></a>
+            <a href="{{ route('admin.services.index') }}"><li><i class="fas fa-toolbox"></i><span>Service</span></li></a>
+            <a href="{{ route('admin.gallaries.index') }}"><li><i class="fas fa-vr-cardboard"></i><span>Gallary</span></li></a>
+            <a href="{{ route('admin.socials.index') }}"><li><i class="fas fa-share-alt"></i><span>Social</span></li></a>
 
-			<a href=""><li><i class="far fa-comments"></i><span>Comments</span></li></a>
-			<li><i class="fas fa-users"></i><span>Users</span>
-				<ul class="side_dropdown">
-					<a href=""><li>View All User</li></a>
-					<a href=""><li>Add User</li></a>
-				</ul>
-			</li>
 			<a href=""><li><i class="far fa-envelope"></i><span>Mailbox</span></li></a>
 			<a href=""><li><i class="far fa-bell"></i><span>Notification</span></li></a>
 			<a href=""><li><i class="fas fa-puzzle-piece"></i><span>Widget</span></li></a>
@@ -90,5 +81,6 @@
 <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
 <script src="{{asset('js/admin_scripts.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 </body>
 </html>

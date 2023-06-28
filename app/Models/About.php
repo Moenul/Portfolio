@@ -16,4 +16,9 @@ class About extends Model
         'contact_intro',
         'footer_intro'
     ];
+
+    public function photo()
+    {
+        return $this->belongsTo('App\Models\Photo');
+    }
 }

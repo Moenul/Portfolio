@@ -14,4 +14,10 @@ class Gallary extends Model
         'gallary_desc',
          'gallary_link'
     ];
+
+
+    public function photo()
+    {
+        return $this->belongsTo('App\Models\Photo');
+    }
 }
