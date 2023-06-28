@@ -45,6 +45,10 @@ Route::group(['middleware' => 'admin'], function(){
         'index'=>'admin.socials.index',
         'edit'=>'admin.socials.edit'
     ]]);
+    Route::resource('/admin/posts', 'AdminPostsController', ['names'=>[
+        'index'=>'admin.posts.index',
+        'edit'=>'admin.posts.edit'
+    ]]);
 
 });
 

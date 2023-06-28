@@ -46,13 +46,14 @@
 	<div class="side_nav">
 		<ul>
 			<a href="{{ url('/admin') }}"><li><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></li></a>
-			<li><i class="far fa-clipboard"></i><span>Posts</span>
+			{{-- <li><i class="far fa-clipboard"></i><span>Posts</span>
 				<ul class="side_dropdown">
-					<a href=""><li>View All Post</li></a>
-					<a href=""><li>Add Post</li></a>
+					<a href="{{ route('admin.posts.index') }}"><li>View Posts</li></a>
+					<a href="{{ route('admin.posts.index') }}"><li>Add Post</li></a>
 				</ul>
-			</li>
+			</li> --}}
 
+            <a href="{{ route('admin.posts.index') }}"><li><i class="far fa-clipboard"></i><span>Posts</span></li></a>
             <a href="{{ route('admin.categories.index') }}"><li><i class="fas fa-th-large"></i><span>Category</span></li></a>
             <a href="{{ route('admin.abouts.index') }}"><li><i class="fas fa-address-card"></i><span>About</span></li></a>
             <a href="{{ route('admin.services.index') }}"><li><i class="fas fa-toolbox"></i><span>Service</span></li></a>
@@ -60,7 +61,6 @@
             <a href="{{ route('admin.socials.index') }}"><li><i class="fas fa-share-alt"></i><span>Social</span></li></a>
 
 			<a href=""><li><i class="far fa-envelope"></i><span>Mailbox</span></li></a>
-			<a href=""><li><i class="far fa-bell"></i><span>Notification</span></li></a>
 			<a href=""><li><i class="fas fa-puzzle-piece"></i><span>Widget</span></li></a>
 			<a href=""><li><i class="fas fa-user"></i><span>Profile</span></li></a>
 		</ul>
