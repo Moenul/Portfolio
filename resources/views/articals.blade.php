@@ -31,7 +31,7 @@
                 @endforeach
             @endif
 
-            <div style="width:100%; display: flex; justify-content:center;">{{ $posts->links("pagination::bootstrap-4") }}</div>
+            <div class="pagination">{{ $posts->links("pagination::bootstrap-4") }}</div>
 
         </div>
 

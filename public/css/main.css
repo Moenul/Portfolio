@@ -670,7 +670,7 @@ body {
 .artical_page .artical_bar .artical .artical_views .see_more{
     text-decoration: none;
     display: inline-block;
-    width: 110px;
+    width: 70px;
     border: 1px solid;
     padding: 6px 15px;
     border-radius: 30px;
@@ -678,13 +678,19 @@ body {
     color: white;
     text-align: center;
     font-size: 16px;
+    transition: all .5s ease-in-out;
+}
+
+.artical_page .artical_bar .artical .artical_views .see_more:hover{
+    background: var(--color-smart-black);
+    color: white;
 }
 
 
 .artical_page .artical_bar .artical .artical_views p{
-    width: 80px;
+    width: 60px;
     float: right;
-    padding: 2px 15px;
+    padding: 5px 15px;
     border-radius: 30px;
     outline: 2px solid var(--color-main);
     color: var(--color-main);
@@ -700,7 +706,31 @@ body {
     font-size: 20px;
     top: 3px;
 }
-
+.artical_page .pagination{
+    width:100%;
+    display: flex;
+    justify-content:center;
+    list-style: none;
+}
+.artical_page .pagination .page-item{
+    padding: 4px 3px;
+    background: white;
+    margin: 4px;
+    color: black;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid black;
+    transition: all .5s ease-in-out;
+}
+.artical_page .pagination .active{
+    background: var(--color-main);
+    color: white;
+    border: 2px solid white;
+}
+.artical_page .pagination .page-item .page-link{
+    padding: 5px 14px;
+}
 
 
 .artical_page .quote_bar{
