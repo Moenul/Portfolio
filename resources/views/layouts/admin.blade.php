@@ -46,14 +46,15 @@
 	<div class="side_nav">
 		<ul>
 			<a href="{{ url('/admin') }}"><li><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></li></a>
-			{{-- <li><i class="far fa-clipboard"></i><span>Posts</span>
+			<li><i class="far fa-clipboard"></i><span>Articals</span>
 				<ul class="side_dropdown">
-					<a href="{{ route('admin.posts.index') }}"><li>View Posts</li></a>
-					<a href="{{ route('admin.posts.index') }}"><li>Add Post</li></a>
+					<a href="{{ route('admin.articals.index') }}"><li>View Articals</li></a>
+					<a href="{{ route('admin.articals.create') }}"><li>Add Artical</li></a>
 				</ul>
-			</li> --}}
+			</li>
 
-            <a href="{{ route('admin.posts.index') }}"><li><i class="far fa-clipboard"></i><span>Posts</span></li></a>
+            {{-- <a href="{{ route('admin.articals.index') }}"><li><i class="far fa-clipboard"></i><span>Articals</span></li></a> --}}
+
             <a href="{{ route('admin.categories.index') }}"><li><i class="fas fa-th-large"></i><span>Category</span></li></a>
             <a href="{{ route('admin.abouts.index') }}"><li><i class="fas fa-address-card"></i><span>About</span></li></a>
             <a href="{{ route('admin.services.index') }}"><li><i class="fas fa-toolbox"></i><span>Service</span></li></a>

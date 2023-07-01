@@ -10,6 +10,8 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    @yield('style')
+
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <title>Moenul Islam</title>
@@ -27,22 +29,9 @@
 
 <div class="header_section">
 <div class="container">
-    <div class="nav_bar">
-		<div class="nav_button">
-			<div class="button_bar button_bar_1"></div>
-			<div class="button_bar button_bar_2"></div>
-		</div>
-		<div class="nav_list">
-			<ul>
-				<a href="{{ url('/') }}"><li>Home</li></a>
-				<a href="{{ url('/#gallary') }}"><li>Gallary</li></a>
-				<a href="{{ url('/articals') }}"><li>Articals</li></a>
-				<a href=""><li>Resume</li></a>
-				<a href="{{ url('/#contact') }}"><li>Say hello?</li></a>
-			</ul>
-		</div>
-		<div class="nav_brand"></div>
-	</div>
+
+
+    @yield('navigation')
 
 
     @yield('header_content')
@@ -61,13 +50,9 @@
 		<div class="scroll_to_top" onclick="topFunction()" id="myBtn">
 			<span class="iconify" data-icon="icon-park-outline:to-top"></span>
 		</div>
-		<div class="footer_content">
-			<div class="icon_bar">
-				<span class="iconify" data-icon="arcticons:workouttime"></span>
-			</div>
 
-			<p>Are you working on somthing great? I would love to help make it happen! Drop me a letter and start your project right now! Just do it.</p>
-		</div>
+                @yield('footer_content')
+
 		<div class="right_manager">
 			&copy; All Rights Reserved
 		</div>
@@ -94,16 +79,6 @@
 
 <!-- Setup and start animation! -->
 <script>
-
-var typed = new Typed('.auto-type', {
-	strings: ['DESIGNER', 'DEVELOPER'],
-	typeSpeed: 200,
-	backSpeed: 200,
-	backDelay: 1000,
-	cursorChar: "_",
-	loop: true
-});
-
 
 // --------- Custom Cursor ------------------
 
@@ -148,6 +123,8 @@ a.forEach(item => {
 // --------- Custom Cursor ------------------
 
 </script>
+
+@yield('scripts')
 
 </body>
 </html>

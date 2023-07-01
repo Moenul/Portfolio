@@ -1,11 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
-use App\Models\Post;
+use App\Models\Artical;
+use App\Models\Category;
+use App\Models\About;
 
-class AdminPostsController extends Controller
+class ArticalsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +17,12 @@ class AdminPostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return view('admin.posts.index', compact('posts'));
+        $posts = Artical::where('artical_type','Post')->latest()->paginate(10);
+        $quotes = Artical::where('artical_type','Quote')->get();
+
+        $categories = Category::all();
+        $abouts = About::all();
+        return view('articals', compact('posts','quotes','categories','abouts'));
     }
 
     /**
@@ -36,8 +43,7 @@ class AdminPostsController extends Controller
      */
     public function store(Request $request)
     {
-        Post::create($request->all());
-        return redirect()->back();
+        //
     }
 
     /**
@@ -48,7 +54,18 @@ class AdminPostsController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Artical::findOrFail($id);
+
+        $post->update([
+            'artical_views' => $post->artical_views + 1
+        ]);
+
+        $quotes = Artical::where('artical_type','Quote')->get();
+
+        $categories = Category::all();
+        $abouts = About::all();
+
+        return view('artical-view', compact('post','quotes','abouts','categories'));
     }
 
     /**
@@ -59,8 +76,7 @@ class AdminPostsController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::findOrFail($id);
-        return view('admin.posts.edit', compact('post'));
+        //
     }
 
     /**
@@ -72,9 +88,7 @@ class AdminPostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $post = Post::findOrFail($id);
-        $post->update($request->all());
-        return redirect('admin/posts');
+        //
     }
 
     /**
@@ -85,7 +99,6 @@ class AdminPostsController extends Controller
      */
     public function destroy($id)
     {
-        Post::findOrFail($id)->delete();
-        return redirect()->back();
+        //
     }
 }

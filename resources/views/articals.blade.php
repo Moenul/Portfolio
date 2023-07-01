@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+{{-- @section('style')
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+@endsection --}}
+
+@section('navigation')
+    @include('includes.navigation')
+@endsection
 
 @section('content')
 
@@ -7,35 +14,35 @@
 <div class="artical_page">
 	<div class="container">
         <div class="artical_bar">
-            <div class="artical">
-                <div class="date">20 April 2023</div>
-                <div class="artical_content">The HTML copyright symbol is represented by &copy; or &#169;. You can use this code to embed the copyright symbol onto a web page if this character is not represented on your keyboard. </div>
-                <div class="artical_views"><a href="" class="see_more">See More </a> <p> <span class="iconify" data-icon="carbon:view-filled"></span> 2034</p></div>
-            </div>
+            @if ($posts)
+                @foreach ($posts as $post)
+                <div class="artical">
+                    <div class="date">{{$post->created_at->format('jS \\of F Y')}}</div>
+                    <div class="artical_content">{!! Str::limit($post->artical_content, 200, ' ...') !!}</div>
+                    <div class="artical_views"><a href="{{ action('ArticalsController@show', ['id'=>$post->id ]) }}" class="see_more">See More </a>
+                        <p> <span class="iconify" data-icon="carbon:view-filled"></span>
+                        @if ($post->artical_views !== NULL)
+                            {{$post->artical_views}}
+                        @else
+                            0
+                        @endif
+                        </p></div>
+                </div>
+                @endforeach
+            @endif
 
-            <div class="artical">
-                <div class="date">01 Decembar 2022</div>
-                <div class="artical_content">Copyright and trademark symbols can also be added by using a keyboard shortcut. For example: To insert the copyright symbol, press Ctrl+Alt+C. To insert the trademark symbol, press Ctrl+Alt+T.</div>
-                <div class="artical_views"><a href="" class="see_more">See More </a> <p> <span class="iconify" data-icon="carbon:view-filled"></span> 5658</p></div>
-            </div>
+            <div style="width:100%; display: flex; justify-content:center;">{{ $posts->links("pagination::bootstrap-4") }}</div>
 
-            <div class="artical">
-                <div class="date">12 May 2022</div>
-                <div class="artical_content">The HTML copyright symbol is represented by &copy; or &#169;. You can use this code to embed the copyright symbol onto a web page if this character is not represented on your keyboard.</div>
-                <div class="artical_views"><a href="" class="see_more">See More </a> <p> <span class="iconify" data-icon="carbon:view-filled"></span> 2323</p></div>
-            </div>
         </div>
 
         <div class="quote_bar">
-            <div class="quote">
-                <p>Your answer will be more reliable if you will put some explanations about your code.</p>
-            </div>
-            <div class="quote">
-                <p>Your answer will be more reliable if you will put some explanations about your code.</p>
-            </div>
-            <div class="quote">
-                <p>Your answer will be more reliable if you will put some explanations about your code.</p>
-            </div>
+            @if ($quotes)
+                @foreach ($quotes as $quote)
+                <div class="quote">
+                    <p>{{$quote->artical_content}}</p>
+                </div>
+                @endforeach
+            @endif
         </div>
 
 	</div>
@@ -44,3 +51,11 @@
 
 
 @endsection
+
+@section('footer_content')
+    @include('includes.footer_content')
+@endsection
+
+{{-- @section('scripts')
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+@endsection --}}

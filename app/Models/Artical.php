@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Artical extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'post_content',
-        'views'
+        'artical_content',
+        'artical_type',
+        'artical_views'
     ];
-
 }

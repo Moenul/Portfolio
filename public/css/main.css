@@ -126,10 +126,9 @@ body {
 .header_section .nav_bar .nav_list li:hover:before{
     width: 25px;
 }
-.header_section .nav_bar .nav_brand{
-    padding: 10px 25px;
-    font-size: 25px;
-    color: white;
+.header_section .nav_bar .nav_brand {
+    width: 56px;
+    overflow: hidden;
     float: right;
 }
 
@@ -671,7 +670,7 @@ body {
 .artical_page .artical_bar .artical .artical_views .see_more{
     text-decoration: none;
     display: inline-block;
-    width: 70px;
+    width: 110px;
     border: 1px solid;
     padding: 6px 15px;
     border-radius: 30px;
@@ -683,9 +682,9 @@ body {
 
 
 .artical_page .artical_bar .artical .artical_views p{
-    width: 60px;
+    width: 80px;
     float: right;
-    padding: 5px 15px;
+    padding: 2px 15px;
     border-radius: 30px;
     outline: 2px solid var(--color-main);
     color: var(--color-main);
@@ -898,7 +897,11 @@ body {
     font-weight: 600;
     letter-spacing: 1.3px;
 }
-
+.header_section .nav_bar .nav_brand {
+    width: 46px;
+    float: left;
+    padding: 4px 12px;
+}
 .header_section .nav_bar .nav_button {
     width: 55px;
     height: 25px;

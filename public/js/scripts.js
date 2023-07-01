@@ -20,6 +20,17 @@ $(document).ready(function(){
      });
 
 
+    function nav_logo(){
+    var window_width = window.innerWidth;
+    // console.log(window_width)
+
+        if (window_width <= 540) {
+        $(".nav_brand img").attr("src", "/images/Logo_White.png");
+        }
+    }
+    setInterval(nav_logo, 100);
+
+
 
 
 

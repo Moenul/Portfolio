@@ -45,11 +45,17 @@ Route::group(['middleware' => 'admin'], function(){
         'index'=>'admin.socials.index',
         'edit'=>'admin.socials.edit'
     ]]);
-    Route::resource('/admin/posts', 'AdminPostsController', ['names'=>[
-        'index'=>'admin.posts.index',
-        'edit'=>'admin.posts.edit'
+
+    Route::resource('/admin/articals', 'AdminArticalsController', ['names'=>[
+        'index'=>'admin.articals.index',
+        'edit'=>'admin.articals.edit',
+        'create'=>'admin.articals.create'
     ]]);
 
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', 'HomeController@index');
+
+
+Route::get('/articals', 'ArticalsController@index');
+Route::get('/artical-view/{id}', 'ArticalsController@show');
