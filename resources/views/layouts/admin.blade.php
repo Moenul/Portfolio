@@ -34,7 +34,7 @@
 			<span>Admin name</span>
 			<ul class="sub_dropdown">
 				<a href=""><li><i class="fas fa-user"></i>Profile</li></a>
-				<a href=""><li><i class="fas fa-power-off"></i>Log Out</li></a>
+				<a href="{{ route('logout') }}"><li><i class="fas fa-power-off"></i>Log Out</li></a>
 			</ul>
 		</li>
 	</ul>

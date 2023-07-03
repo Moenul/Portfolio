@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 
 Auth::routes();
+
+Route::get('logout/', 'Auth\loginController@logout');
 
 Route::group(['middleware' => 'admin'], function(){
 
@@ -55,6 +57,9 @@ Route::group(['middleware' => 'admin'], function(){
 });
 
 Route::get('/', 'HomeController@index');
+Route::get('/home', 'HomeController@index');
+Route::get('/index', 'HomeController@index');
+
 
 
 Route::get('/articals', 'ArticalsController@index');
